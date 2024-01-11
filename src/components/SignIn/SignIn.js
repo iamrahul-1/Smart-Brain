@@ -15,21 +15,21 @@ class SignIn extends React.Component {
 		this.setState	({signInPassword: event.target.value})
 	}
 	onSubmitSignIn = () => {
-		// fetch('https://fine-lime-scallop-shoe.cyclic.app/signin', {
-		// 	method: 'post',
-		// 	headers: {'Content-Type' : 'application/json'},
-		// 	body: JSON.stringify({
-		// 		email: this.state.signInEmail,
-		// 		password: this.state.signInPassword
-		// 	})
-		// })
-		// .then(response => response.json())
-		// .then(data => {
-		// 	if (data.id) {
-		//		this.props.loadUser(data);
+		fetch('https://fine-lime-scallop-shoe.cyclic.app/signin', {
+			method: 'post',
+			headers: {'Content-Type' : 'application/json'},
+			body: JSON.stringify({
+				email: this.state.signInEmail,
+				password: this.state.signInPassword
+			})
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.id) {
+				this.props.loadUser(data);
 				this.props.onRouteChange('home');
-		//	}
-	//	})
+			}
+		})
 	}
 	
 	render() {

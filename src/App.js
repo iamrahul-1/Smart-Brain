@@ -102,7 +102,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageURL : this.state.input})
     // fetch("https://api.clarifai.com/v2/models/face-detection/outputs", ApiFunction(this.state.input)) //why imageURL not working?
-      fetch('https://fine-lime-scallop-shoe.cyclic.app/imageurl', {
+      fetch('https://smart-brain-api-1bk1.onrender.com/imageurl', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
@@ -112,7 +112,7 @@ class App extends Component {
       .then(response =>  response.json())
       .then(response => {
         if (response){
-          fetch('https://fine-lime-scallop-shoe.cyclic.app/image', {
+          fetch('https://smart-brain-api-1bk1.onrender.com/image', {
             method: 'put',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
