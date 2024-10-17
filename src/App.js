@@ -68,7 +68,7 @@ const App = () => {
 
   const onButtonSubmit = () => {
     setImageURL(input); // Update imageURL for rendering
-    fetch("http://localhost:3000/imageurl", {
+    fetch("https://face-recognition-api-peach.vercel.app/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -78,7 +78,7 @@ const App = () => {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://face-recognition-api-peach.vercel.app/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
